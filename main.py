@@ -1,5 +1,4 @@
 import json
-import subprocess
 
 
 class Main:
@@ -66,10 +65,6 @@ class Main:
         print(f"DIFFERENCE  : {len(self.diff)}")
         self.out_write(self.diff, f"users/{self.get_user}/out_files/diff.htm")
     
-    def open_files(self):
-        subprocess.run(f"open users/{self.get_user}/out_files/diff.htm")
-        subprocess.run(f"open users/{self.get_user}/out_files/pendings.htm")
-        
 
 if __name__ == "__main__":
     starter = Main()
@@ -77,4 +72,3 @@ if __name__ == "__main__":
     starter.get_followings()
     starter.get_diff()
     starter.get_pendings()
-    starter.open_files()
